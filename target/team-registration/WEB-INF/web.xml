@@ -5,4 +5,12 @@
   <welcome-file-list>
     <welcome-file>home.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-class>controller.CreateTeams</servlet-class>
+    <servlet-name>createteams</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createteams</servlet-name>
+    <url-pattern>/createteams</url-pattern>
+  </servlet-mapping>
 </web-app>
