@@ -29,4 +29,20 @@
     <servlet-name>home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-class>controller.ViewPlayers</servlet-class>
+    <servlet-name>viewplayers</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewplayers</servlet-name>
+    <url-pattern>/viewplayers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-class>controller.GetDetails</servlet-class>
+    <servlet-name>getdetails</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getdetails</servlet-name>
+    <url-pattern>/getdetails</url-pattern>
+  </servlet-mapping>
 </web-app>

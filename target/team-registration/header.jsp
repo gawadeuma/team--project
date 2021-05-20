@@ -23,6 +23,9 @@
       <a class="me-3 py-2 text-dark text-decoration-none" href="createplayers"
         >Create Players</a
       >
+      <a class="me-3 py-2 text-dark text-decoration-none" href="viewplayers"
+        >View Players</a
+      >
     </nav>
   </div>
 

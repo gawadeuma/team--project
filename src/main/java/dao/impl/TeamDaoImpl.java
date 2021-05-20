@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
 
+import dao.PlayerDao;
 import dao.TeamDao;
 import exceptions.TeamRegisteredAlready;
 import models.Team;
@@ -88,6 +89,49 @@ public class TeamDaoImpl implements TeamDao {
         }
 
         return teams;
+    }
+
+    @Override
+    public Team getThatTeam(String teamName) {
+
+        DbConnection dbConnection = new DbConnectionImpl();
+
+        final String GET_THAT_TEAM = "SELECT team_id, team_name FROM teams where team_name=?";
+
+        PlayerDao playerDao = new PlayerDaoImpl();
+
+        Team team = null;
+
+        try {
+            connection = dbConnection.getConnection(connection);
+            preparedStatement = connection.prepareStatement(GET_THAT_TEAM);
+            preparedStatement.setString(1, teamName);
+            resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()) {
+                team = new Team();
+
+                team.setTeamId(resultSet.getInt("team_id"));
+                team.setTeamName(resultSet.getString("team_name"));
+                team.setPlayers(playerDao.getPLayers(team.getTeamId()));
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+        } finally {
+            try {
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        }
+
+        return team;
+        
     }
 
 }

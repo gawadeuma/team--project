@@ -9,4 +9,6 @@ public interface TeamDao {
     int createTeams(Team team) throws TeamRegisteredAlready;
 
     List<Team> getTeamsList();
+
+    Team getThatTeam(String teamName);
 }

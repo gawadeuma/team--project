@@ -6,7 +6,9 @@ c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\models\Team.j
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\services\impl\TeamServiceImpl.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\services\PlayerService.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\dao\PlayerDao.java
+c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\controller\ViewPlayers.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\dao\impl\TeamDaoImpl.java
+c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\controller\GetDetails.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\controller\Home.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\services\impl\PlayerServiceImpl.java
 c:\Users\Suvadeep\Desktop\web apps\team-registration\src\main\java\utilities\DbConnection.java
