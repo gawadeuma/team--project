@@ -2,13 +2,14 @@ package services.impl;
 
 import dao.TeamDao;
 import dao.impl.TeamDaoImpl;
+import exceptions.TeamRegisteredAlready;
 import models.Team;
 import services.TeamService;
 
 public class TeamServiceImpl implements TeamService {
 
     @Override
-    public int createTeamObject(String teamName) {
+    public int createTeamObject(String teamName) throws TeamRegisteredAlready {
         
         Team team = new Team();
 

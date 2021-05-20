@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import dao.TeamDao;
+import exceptions.TeamRegisteredAlready;
 import models.Team;
 import utilities.DbConnection;
 import utilities.impl.DbConnectionImpl;
@@ -15,7 +16,7 @@ public class TeamDaoImpl implements TeamDao {
     PreparedStatement preparedStatement = null;
 
     @Override
-    public int createTeams(Team team) {
+    public int createTeams(Team team) throws TeamRegisteredAlready {
         DbConnection dbConnection = new DbConnectionImpl();
 
         final String CREATE_USER = "INSERT INTO teams(team_name) VALUES(?)";
@@ -28,7 +29,7 @@ public class TeamDaoImpl implements TeamDao {
             preparedStatement.setString(1, team.getTeamName());
             result = preparedStatement.executeUpdate();
         } catch (Exception e) {
-            //TODO: handle exception
+            throw new TeamRegisteredAlready("Team is already registered!");
         }
         
         return result;

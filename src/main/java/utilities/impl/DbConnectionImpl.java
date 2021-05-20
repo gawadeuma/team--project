@@ -18,7 +18,7 @@ public class DbConnectionImpl implements DbConnection {
             Class.forName(JDBC_DRIVER);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (Exception e) {
-            // TODO: handle exception
+           
         }
         return connection;
     }
