@@ -22,7 +22,7 @@ public class PlayerDaoImpl implements PlayerDao {
     public int createPlayers(Player player) throws PlayerAlreadyRegistered {
         DbConnection dbConnection = new DbConnectionImpl();
 
-        final String CREATE_PLAYERS = " INSERT INTO players(player_id,player_name,player_age,player_gender,team_id) VALUES(?,?,?,?,?)";
+        final String CREATE_PLAYERS = " INSERT INTO players(player_id,player_name,player_age,player_gender,team_id) VALUES(?,?,?,?,?) ";
 
         int result = 0;
 
