@@ -16,14 +16,14 @@
       <main class="container">
         <div class="bg-light p-5 rounded">
           <h1>Create Players</h1>
-            <% if(request.getParameter("teamsRegistered") != null) { %>
+            <% if(request.getParameter("playerRegistered") != null) { %>
             <div class="alert alert-success" role="alert">
-              <%= request.getParameter("teamsRegistered") %>
+              <%= request.getParameter("playerRegistered") %>
             </div>
             <% } %>
-            <% if(request.getParameter("teamsNotRegistered") != null) { %>
+            <% if(request.getParameter("playerNotRegistered") != null) { %>
             <div class="alert alert-danger" role="alert">
-                <%= request.getParameter("teamsNotRegistered") %>
+                <%= request.getParameter("playerNotRegistered") %>
               </div>
             <% } %>
           <p class="lead"><form action="createplayers" method="POST">
