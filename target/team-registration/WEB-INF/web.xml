@@ -13,4 +13,12 @@
     <servlet-name>createteams</servlet-name>
     <url-pattern>/createteams</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-class>controller.CreatePlayer</servlet-class>
+    <servlet-name>createplayers</servlet-name>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createplayers</servlet-name>
+    <url-pattern>/createplayers</url-pattern>
+  </servlet-mapping>
 </web-app>
