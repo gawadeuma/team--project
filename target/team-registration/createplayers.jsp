@@ -1,4 +1,6 @@
 <%@ include file="index.jsp"%>
+<%@ page import="models.Team" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,6 +46,16 @@
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Others</option>
+                </select>
+            </div>
+            <% List<Team> teams = (List<Team>) request.getAttribute("teams"); %>
+            <div class="mb-3">
+              <label for="t_list" class="form-label">Choose a Team</label>
+                <select class="form-select" id="t_list" name="teams">
+                    <option selected>Choose...</option>
+                    <% for(Team t : teams) { %>
+                      <option value="<%= t.getTeamId() %>"><%= t.getTeamName() %></option>
+                    <% } %>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
