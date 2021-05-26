@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,13 +30,26 @@ public class CreateTeams extends HttpServlet {
 
         int result = 0;
 
+        resp.setContentType("application/json");
+
+        PrintWriter out = resp.getWriter();
+
+        final String data = "Team is successfully Registered!";
+
         try {
             result = teamService.createTeamObject(teamName);
             if (result != 0) {
-                resp.sendRedirect("createteams?teamsRegistered=Team is successfully Registered!");
+                // resp.sendRedirect("createteams?teamsRegistered=Team is successfully
+                // Registered!");
+                out.write(data);
             }
         } catch (TeamRegisteredAlready e) {
-            resp.sendRedirect("createteams?teamsNotRegistered=" + e.getMessage());
+            // resp.sendRedirect("createteams?teamsNotRegistered=" + e.getMessage());
+            out.write(e.getMessage());
+        } finally {
+            if (out != null) {
+                out.close();
+            }
         }
 
     }
